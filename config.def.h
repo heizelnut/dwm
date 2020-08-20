@@ -10,9 +10,9 @@ static const int user_bh            = 22;       /* 0 means that dwm will calcula
 static const char *fonts[]          = { "FontAwesome:size=10", "Inconsolata Nerd Font Mono:size=12" };
 static const char dmenufont[]       = "Inconsolata Nerd Font Mono:size=12";
 static const char black[]           = "#000000";
-static const char lightgray[]       = "#a4a4a4";
-static const char white[]           = "#fafafa";
-static const char darkgray[]        = "#181818";
+static const char lightgray[]       = "#AAAAAA";
+static const char white[]           = "#EEEEEE";
+static const char darkgray[]        = "#222222";
 static const char *colors[][3] = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { lightgray, black, darkgray },
