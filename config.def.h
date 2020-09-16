@@ -13,10 +13,11 @@ static const char black[]           = "#000000";
 static const char lightgray[]       = "#AAAAAA";
 static const char white[]           = "#EEEEEE";
 static const char darkgray[]        = "#222222";
+static const char lightest[]        = "#444444";
 static const char *colors[][3] = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { lightgray, black, darkgray },
-	[SchemeSel]  = { white, black, darkgray  },
+	[SchemeSel]  = { white, black, lightest },
 };
 
 /* tagging */
