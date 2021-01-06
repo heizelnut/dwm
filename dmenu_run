@@ -1,0 +1,13 @@
+#!/bin/zsh
+program=$(dmenu_path | dmenu "$@")
+
+getAlias() {
+	printf '%s\n' $aliases[$1]
+}
+
+echo $program
+
+expansion="$(getAlias $program)"
+
+[ "$expansion" != '' ] && { $expansion & } || { $program & }
+ 
