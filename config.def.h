@@ -3,7 +3,7 @@
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const int swallowfloating    = 1;        /* 1 means swallow floating windows by default */
+static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 20;       /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
@@ -36,6 +36,7 @@ static const Rule rules[] = {
 	{ "Gimp",   		 NULL,     NULL,           0,         0,          0,           0,        -1 },
 	{ "Firefox",		 NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "Alacritty",  	 NULL,     NULL,           0,         0,          1,          -1,        -1 },
+	{ "Blender",  	 NULL,     NULL,           0,         0,          1,          -1,        -1 },
 	{ "TelegramDesktop",	 NULL,     "Media viewer", 0,         1,          0,          -1,        -1 }, /* telegram */
 	{ NULL,     		 NULL,     "Event Tester", 0,         1,          0,           1,        -1 }, /* xev */
 };
@@ -81,7 +82,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_BackSpace,togglescratch,  {.v = scratchpadcmd} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
+	{ MODKEY,                       XK_Tab,    focusstack,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
@@ -104,7 +105,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,	   quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_Escape,	   quit,           {0} },
 };
 
 /* button definitions */
